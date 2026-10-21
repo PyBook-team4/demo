@@ -4,7 +4,7 @@ from utils.file_handler import FileHandler
 
 class MemberManager:
     def __init__(self, filename="data/members.json"):
-        self.filename = filename
+        self.filename = filename    
         self.members = {}  # {user_id: Member 객체}
         self.current_user = None  # 현재 로그인한 회원 객체
         self.load_members()

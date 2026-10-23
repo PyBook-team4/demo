@@ -47,7 +47,7 @@ class OpenAIClient:
         except Exception as e:
             return f"퀴즈 생성 중 API 호출 오류가 발생했습니다: {e}"
 
-#임시 테스트 코드, 추후 테스 폴더에서 진행
+#임시 테스트 코드, 추후 테스트 폴더에서 진행
 if __name__ == "__main__":
     print("--- OpenAI API 연동 테스트 시작 ---")
     try:

@@ -41,7 +41,7 @@ if __name__ == "__main__":
         print("openAI 클라이언트 초기화 성공")
         
         # API 호출 테스트
-        test_book = "데미안"
+        test_book = "데미안"    #임시 테스트용 추후에 사용자한테 입력받은 도서로 퀴즈 생성해야함
         print(f"\n요청 중: '{test_book}' 퀴즈 생성")
         
         quiz_result = ai_client.generate_book_quiz(test_book)

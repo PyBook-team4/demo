@@ -2,7 +2,16 @@ import os
 from openai import OpenAI
 from dotenv import load_dotenv
 
-load_dotenv()
+# 해당 코드는 단위 테스트를 위한 코드로 test폴더에 넣기 전까지 utils/openai_client.py에서 코드돌리는경우 필요한 코드입니다 나중에 삭제할 예정입니다.
+# 현재 파일(openai_client.py) 위치를 기준으로 부모 폴더(PyBook)의 .env 경로를 자동 추적
+current_dir = os.path.dirname(os.path.abspath(__file__))
+parent_dir = os.path.dirname(current_dir)
+env_path = os.path.join(parent_dir, ".env")
+
+load_dotenv(dotenv_path=env_path)
+
+# 추적한 절대 경로로 환경변수 로드
+#load_dotenv(dotenv_path=env_path)
 #현재 개발 가이드를 위한 임시 코드 나중에 전체 수정 필요
 class OpenAIClient:
 
@@ -56,7 +65,7 @@ if __name__ == "__main__":
         print("openAI 클라이언트 초기화 성공")
         
         # API 호출 테스트
-        test_book = "데미안"    #임시 테스트용 추후에 사용자한테 입력받은 도서로 퀴즈 생성해야함
+        test_book = "이기적 유전자"    #임시 테스트용 추후에 사용자한테 입력받은 도서로 퀴즈 생성해야함
         print(f"\n요청 중: '{test_book}' 퀴즈 생성")
         
         quiz_result = ai_client.generate_book_quiz(test_book)
